@@ -62,11 +62,12 @@ Primary Key features are:
 * Sentiment analysis based count in product review
 
 <p align="center">
-  <img width="600" height="500" src="https://github.com/forhadsidhu/Django-E-Commerce/tree/master/login.png">
+  <img width="600" height="500" src="https://github.com/forhadsidhu/Django-E-Commerce/blob/master/git_images/login.PNG">
 </p>
 <p align="center">
-  <img width="600" height="500" src="https://github.com/forhadsidhu/Django-E-Commerce/tree/master/products.png">
+  <img width="600" height="500" src="https://github.com/forhadsidhu/Django-E-Commerce/blob/master/git_images/products.PNG">
 </p>
+
 ### Building With
 
 * [Bootstrap](https://getbootstrap.com)
