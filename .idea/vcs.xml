@@ -2,5 +2,9 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/minion-fun" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/static/minion-fun" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/templates/camera/opencv-web-video" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/templates/minion-fun" vcs="Git" />
   </component>
 </project>

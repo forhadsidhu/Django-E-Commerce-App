@@ -1,0 +1,27 @@
+/* Make sure that padding behaves as expected */
+* {box-sizing:border-box}
+
+/* Container for skill bars */
+.bar_container {
+  width: 100%; /* Full width */
+  background-color: #ddd; /* Grey background */
+}
+.rev-form{
+   margin-top:2em;  /* making gap between form and paragraph */
+}
+.para{
+  margin:0  /* for making a space beween two bar */
+}
+.skills {
+  padding-top: 2px;
+  padding-bottom:2px;
+  text-align: right; /* Right-align text */
+  color: white; /* White text color */
+}
+
+.html{
+    background-color: #4CAF50;
+    } /* Green */
+.css {
+    background-color: #E06666;
+    } /* Blue */

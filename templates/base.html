@@ -1,18 +1,25 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 
+
+    {% load static %}
+
     <!-- Required meta tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 
     <! --CSS -->
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
 
+    <!--custon css -->
 
-
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
 
     <title>
         {% block title %}
@@ -30,10 +37,82 @@
 
     {% endblock %}
 
-    <!-- Optional JavaScript -->
+    <!-- footer -->
+    {% include 'home/footer.html' %}
+
+
+    <!-- home js  -->
+    <!--- all js goes here --->
+    <script src="{% static 'js/main.js'%}"></script>
+
+
     <!-- This is bootstrap js require for working collapsable button -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+
+          const progressBar = document.querySelector('.bar_container');
+          const pos_bar = document.querySelector('.html')
+          const skill = document.querySelector('.skills')
+          const pos_txt = pos_bar.querySelector('h1')
+
+          const neg_bar = document.querySelector('.css')
+          const neg_txt = neg_bar.querySelector('h1')
+
+
+          var pos_progress=20
+          var neg_progress=20
+          pos_txt.innerHTML =`${pos_progress} %`;
+          neg_txt.innerHTML =`${neg_progress} %`;
+
+            $(document).ready(function(){
+               $("#review-form").submit(function(e){
+                // prevent from normal form behaviour
+                    e.preventDefault();
+                    // serialize the form data
+                    var serializedData = $(this).serialize();
+                    console.log(serializedData)
+
+                    $.ajax({
+                        type : 'POST',
+                        url :  "{% url 'rev_submit' %}",
+                        data : serializedData,
+
+
+                        success : function(data){
+
+                        alert('Review is submitted')
+                        //reset the form after successful submit
+                            $("#review-form")[0].reset()
+                            console.log('success')
+                            console.log(data['data'])
+
+                            pos_progress = data['pos_data']
+                            neg_progress = data['neg_data']
+
+                            pos_txt.innerHTML =`${pos_progress} %`;
+                            pos_bar.style.width = pos_progress + '%';
+
+
+                            neg_txt.innerHTML =`${neg_progress} %`;
+                            neg_bar.style.width = neg_progress + '%';
+
+
+                        },
+                        error : function(response){
+                            console.log('not success')
+                            console.log(response)
+                        }
+                    });
+               });
+            });
+</script>
+
+
+
+
+
 
 </body>
 </html>

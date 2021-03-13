@@ -1,3 +1,8 @@
+
+
+
+
+
 {% extends 'base.html' %}
 {% load static %}
 
@@ -6,6 +11,7 @@
 {% endblock %}
 
 {% block content %}
+
 
 
 
@@ -25,7 +31,153 @@
 
         </div>
         </div>
+   </div>
+
+
+<!-- prodcut card ------>
+
+
+<div class="container">
+  <div class="row">
+
+      <!-- No-1 -->
+   <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{% static 'img/download.jpg'%}" alt="Card image cap">
+  <div class="card-body">
+
+
+
+
+
+
+      <!-- recommendation bar -->
+      <p class="para">Recomended</p>
+        <div class="bar_container" style="width:100%;height:31px">
+          <div class="skills html" style=" width: 20%; height:31px"><h1 style="font-size: 1em; text-align: right;height:31px">{{progress}}</h1></div>
+        </div>
+
+      <p class="para">Not recommended</p>
+        <div class="bar_container" style="width:100%;height:31px">
+          <div class="skills css" style=" width: 20%; height:31px"><h1 style="font-size: 1em; text-align: right;height:31px">{{neg_progress}}</h1></div>
+        </div>
+
+
+      <!-- review box -->
+
+
+      <form class="rev-form"   id ="review-form" method="POST">
+          {% csrf_token %}
+          {{ Rev.as_p }}
+
+          {{form.review}}
+
+       <textarea  name="review"  id="myTextArea" required></textarea>
+
+       <input type="submit"value="review" name="review" id="rev-id" >
+
+     </form>
+      <!-- review box code end -->
+
+
+
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="{% url 'uimage' %}" class="btn btn-primary">E-trail</a>
+  </div>
+
+
 
 </div>
 
+       <!-- No-2 -->
+         <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{% static 'img/download.jpg'%}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="{% url 'uimage' %}" class="btn btn-primary">E-trail</a>
+  </div>
+
+</div>
+
+       <!-- No-3 -->
+
+
+         <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{% static 'img/download.jpg'%}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="{% url 'uimage' %}" class="btn btn-primary">E-trail</a>
+  </div>
+</div>
+
+      <!---no 4 --->
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    <div class="row">
+
+      <!-- No-1 -->
+      <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{% static 'img/download.jpg'%}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="{% url 'uimage' %}" class="btn btn-primary">E-trail</a>
+  </div>
+
+</div>
+
+       <!-- No-2 -->
+      <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{% static 'img/download.jpg'%}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="{% url 'uimage' %}" class="btn btn-primary">E-trail</a>
+  </div>
+
+</div>
+
+       <!-- No-3 -->
+       <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{% static 'img/download.jpg'%}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="{% url 'uimage' %}" class="btn btn-primary">E-trail</a>
+  </div>
+
+</div>
+
+
+
+        <!--No -4 --->
+
+
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
 {% endblock %}
+
+
